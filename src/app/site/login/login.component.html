@@ -1,20 +1,21 @@
 <section id="page_login">
   <div class="login-container row">
     <div class="col-12 col-sm-6">
-      <form>
+      <form [formGroup]="form">
+
         <h2>Seja Bem Vindo!</h2>
 
         <div class="form-control">
-          <label class="ps-2" for="username">Usuário</label>
-          <input type="text" id="username" placeholder="Digite seu usuário">
+          <label class="ps-2" for="email">Email</label>
+          <input [formControl]="form.controls.email" type="email" id="email" placeholder="Digite seu email">
         </div>
 
         <div class="form-control">
           <label class="ps-2" for="password">Senha</label>
-          <input type="password" id="password" placeholder="Digite sua senha">
+          <input [formControl]="form.controls.password" type="password" id="password" placeholder="Digite sua senha">
         </div>
 
-        <button type="submit">Login</button>
+        <button (click)="onSave()">Login</button>
         <p class="forgot-password">Forgot your password?</p>
       </form>
     </div>
